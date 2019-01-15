@@ -2,8 +2,6 @@ import React, { Component } from 'react';
 import QuizItem from './QuizItem';
 import { connect } from 'react-redux';
 import { Redirect } from 'react-router-dom';
-import { calculateGameResult } from './quiz_utils';
-var moment = require('moment');
 
 
 
@@ -52,13 +50,16 @@ class QuizList extends Component {
            
         const allAnswers = this.props.shuffledAnswers[currQuestion]
       
+        
 
         return (
             <div style={{marginBottom:"200px"}}>
-                <i className="large material-icons" onClick={this.props.prevQuestion}>arrow_back</i>
                     <span>{this.props.currQuestion+1} of {this.props.questions.length}</span>
-                <i className="large material-icons" onClick={this.props.nextQuestion}>arrow_forward</i>
-                <QuizItem {...questions[currQuestion]} allAnswers={allAnswers} updateAnsweredQuestions = {this.updateAnsweredQuestions}/>
+                <QuizItem {...questions[currQuestion]} 
+                          allAnswers={allAnswers}
+                          updateAnsweredQuestions = {this.updateAnsweredQuestions}
+                          nextQuestion = {this.props.nextQuestion}
+                          />
             </div>
         );
     }

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { firebase } from './firebase';
-import { Redirect } from 'react-router-dom';
+import { Redirect, Link } from 'react-router-dom';
 
 
 class Login extends Component {
@@ -37,6 +37,8 @@ class Login extends Component {
                                 Login
                             </button>
                         </form>
+                        <p style={{fontSize:'10px'}}>Or <Link to="/register">register</Link> for a new account</p>
+                       
                     </div>
                 </div>
         );

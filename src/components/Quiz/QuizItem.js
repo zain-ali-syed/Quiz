@@ -1,7 +1,8 @@
 import React from 'react';
 
+var nTimeout;
 
-const QuizItem = ( { category, type, difficulty, question, allAnswers, updateAnsweredQuestions } ) => {
+const QuizItem = ( { category, type, difficulty, question, allAnswers, updateAnsweredQuestions, nextQuestion } ) => {
     
     
     return (
@@ -13,9 +14,16 @@ const QuizItem = ( { category, type, difficulty, question, allAnswers, updateAns
                 <div className="answers">
                     { allAnswers.map( (answer) => (
                         <div key = { answer }>
-                            <button className="waves-effect waves-light blue darken-4 btn-large answer-button"
+                            <button className="btn-large answer-button"
                                     style={{ margin:"10px" }}
-                                    onClick = { () => { updateAnsweredQuestions(answer) } }
+                                    onClick = { () => { 
+                                                        clearTimeout(nTimeout);
+                                                        nTimeout = setTimeout(()=>{
+                                                            updateAnsweredQuestions(answer);
+                                                            nextQuestion() 
+                                                        }, 1000)
+                                                      }
+                                              }
                                     dangerouslySetInnerHTML={{ __html: answer }}
                                     >
                             </button>

@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { firebase } from './firebase';
-import { Redirect } from 'react-router-dom';
+import { Redirect} from 'react-router-dom';
 
 
 const logout = (props) => {
@@ -12,10 +12,12 @@ const logout = (props) => {
     }
 
 const NavBar = (props) => {
+
+    console.log("props ", props)
     return (
         <nav>
             <div className="nav-wrapper purple darken-4">
-              <a href="b" className="brand-logo center">Brain Power</a>
+              <a href="b" className="brand-logo right">Brain Power </a>
               { 
                 props.authenticated.user !== null && 
                 <div style={{fontSize:'20px', paddingLeft:'10px'}}>
@@ -23,6 +25,7 @@ const NavBar = (props) => {
                             Sign Out
                         </button>
                         <span style={{marginLeft:'10px'}}>Points: {props.points} | User: {props.display_name}</span>
+                              
                 </div>
               }
             </div>

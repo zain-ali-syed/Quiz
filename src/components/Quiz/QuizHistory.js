@@ -40,10 +40,14 @@ class QuizHistory extends Component {
     render() {
         return (
             <React.Fragment>
+            <Link className="waves-effect waves-light btn-large blue" to="/quiz">Play Again</Link>
+            <br/><br/>
+
             <table className="blue striped history">
                     <thead>
-                        <tr>
+                        <tr className="purple darken-4">
                             <th>Quiz History</th>
+                            <th></th>
                             <th></th>
                             <th></th>
                             <th></th>
@@ -66,7 +70,6 @@ class QuizHistory extends Component {
                             
                             const points = calculateGameResult(game.questions, game.answers).gamePoints;
                             const percentage = calculateGameResult(game.questions, game.answers).percentage;
-                            console.log("game date ", game)
                             return(
                                 <tr key={i}>
                                     <td>{getFullDate(game.date.seconds)}</td>

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import {BrowserRouter, Route, Switch, Redirect} from 'react-router-dom';
+import {BrowserRouter, Route, Switch, Redirect, Link} from 'react-router-dom';
 import NavBar from './components/NavBar';
 import Logo from './components/Logo';
 import { connect } from 'react-redux';
@@ -7,6 +7,7 @@ import { connect } from 'react-redux';
 //component pages
 import Home from './components/Home';
 import Login from './components/Login';
+import Register from './components/Register';
 import PageNotFound from './components/PageNotFound';
 import Quiz from './components/Quiz/Quiz';
 import QuizList from './components/Quiz/QuizList';
@@ -28,23 +29,34 @@ class App extends Component {
   render() {
     return (
       <React.Fragment>
-      <NavBar />
-      <BrowserRouter>
-        <div className="container center">
-            <Logo />
-                <Switch>
-                  <Route path = "/login"  render = { (props) => <Login {...props} loggedIn = { this.props.loggedIn }/>} />
-                  <PrivateRoute exact path="/" component = { Home } loggedIn = {this.props.loggedIn}/>
-                  <PrivateRoute  path = "/quiz" component = { Quiz } loggedIn = {this.props.loggedIn} />
-                  <PrivateRoute  path = "/quiz_list" component = { QuizList } loggedIn = {this.props.loggedIn} />
-                  <PrivateRoute  path = "/quiz_result" component = { QuizResult } loggedIn = {this.props.loggedIn} />
-                  <PrivateRoute  path = "/quiz_history" component = { QuizHistory } loggedIn = {this.props.loggedIn} />
-                  <PrivateRoute  path = "/quiz_leaderboard" component = { QuizLeaderBoard } loggedIn = {this.props.loggedIn} />
-                  <PrivateRoute  path = "/game_details/:id" component = { QuizGameDetails } loggedIn = {this.props.loggedIn} />
-                  <Route  component = { PageNotFound } />
-                </Switch>
-        </div>
-     </BrowserRouter>
+        <NavBar />
+         <BrowserRouter>
+           <React.Fragment>
+
+          <div className="container center">
+              <Logo />
+                  <Switch>
+                      <Route path = "/login"  render = { (props) => <Login {...props} loggedIn = { this.props.loggedIn }/>} />
+                      <Route path = "/register"  render = { (props) => <Register {...props} loggedIn = { this.props.loggedIn }/>} />
+                      <PrivateRoute exact path="/" component = { Home } loggedIn = {this.props.loggedIn}/>
+                      <PrivateRoute  path = "/quiz" component = { Quiz } loggedIn = {this.props.loggedIn} />
+                      <PrivateRoute  path = "/quiz_list" component = { QuizList } loggedIn = {this.props.loggedIn} />
+                      <PrivateRoute  path = "/quiz_result" component = { QuizResult } loggedIn = {this.props.loggedIn} />
+                      <PrivateRoute  path = "/quiz_history" component = { QuizHistory } loggedIn = {this.props.loggedIn} />
+                      <PrivateRoute  path = "/quiz_leaderboard" component = { QuizLeaderBoard } loggedIn = {this.props.loggedIn} />
+                      <PrivateRoute  path = "/game_details/:id" component = { QuizGameDetails } loggedIn = {this.props.loggedIn} />
+                      <Route  component = { PageNotFound } />
+                  </Switch>
+                 
+          </div>
+          <footer className="page-footer purple darken-4 center" style={{paddingBottom:'80px', paddingLeft:'30px', zIndex:'10000'}}>
+            <div>
+              <span style={{fontSize:'20px'}}><Link to="/quiz_history">My Game History </Link>| </span>
+              <span style={{fontSize:'20px'}}><Link to="/quiz_leaderboard">Leaderboard </Link></span>
+            </div>
+         </footer>
+          </React.Fragment>
+        </BrowserRouter>
      </React.Fragment>
     );
   }

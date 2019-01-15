@@ -43,7 +43,7 @@ class QuizGameDetails extends Component {
                         if(answer === question.correct_answer) rowStyle = "green accent-4"
                         else rowStyle = "indigo darken-4"
                             
-                        return <tr className={rowStyle}><th>{answer}{chosenAnswer === answer && " --> your answer" }</th></tr>}
+                        return <tr className={rowStyle}><th><span  dangerouslySetInnerHTML={{ __html: answer}}/>{chosenAnswer === answer && " --> your answer" }</th></tr>}
                     )
     }
     
@@ -82,8 +82,8 @@ class QuizGameDetails extends Component {
                             this.state.game.questions.map((question, i) =>
                                     (
                                     <React.Fragment>
-                                        <tr className="red darken-4">
-                                            <th>{question.question}</th>
+                                        <tr className="blue">
+                                            <th  dangerouslySetInnerHTML={{ __html: question.question }}/>
                                         </tr>
                                        
                                        

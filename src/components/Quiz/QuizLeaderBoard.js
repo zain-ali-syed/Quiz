@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import {getLeaderboard} from '../utils';
+import { Link } from 'react-router-dom';
+
 
 class QuizLeaderBoard extends Component {
 
@@ -29,9 +31,11 @@ class QuizLeaderBoard extends Component {
     render() {
         return (
             <React.Fragment>
+            <Link className="waves-effect waves-light btn-large blue" to="/quiz">Play Again</Link>
+            <br />  <br />
             <table className="blue striped history container">
                     <thead>
-                        <tr>
+                        <tr className="purple darken-4">
                             <th>Leaderboard</th>
                             <th></th>
                         </tr>

@@ -41,11 +41,12 @@ class QuizResult extends Component {
                if(user.data().uid === game.uid)
                {
                    const documentID = user.id;
+
+                   //now we have document id lets update db with new points
                    setPoints("users", documentID, this.props.points)
                }
             });
 
-            //now we have document id lets update db with new points
 
 
         }catch (err){
@@ -58,7 +59,7 @@ class QuizResult extends Component {
             <div className="center">
                 <h2>Result</h2>  
                 <p>
-                    Congrats you scored { calculateGameResult(this.props.questions, this.props.answeredQuestions).correctAnswers } out of { calculateGameResult(this.props.questions, this.props.answeredQuestions).totalQuestions }
+                    Congratulations you scored { calculateGameResult(this.props.questions, this.props.answeredQuestions).correctAnswers } out of { calculateGameResult(this.props.questions, this.props.answeredQuestions).totalQuestions }
                 </p>
                 <QuizHistory />
             </div>

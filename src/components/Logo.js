@@ -7,7 +7,7 @@ const margin = {
 const Logo = () => {
     return (
         <div className="center" style={margin}>
-            <img src="./images/brain.png" alt="logo" width ="300"/>
+            <img src="./images/brain.png" alt="logo" width ="200"/>
         </div>
     );
 };

@@ -20,6 +20,7 @@ code {
 
 .answer-button{
   font-size:20px;
+  background-color: #4a148c;
 }
 
 .history{
@@ -53,4 +54,42 @@ select{
 
 .select-style select:focus {
   outline: none;
+}
+
+.margin{
+  margin-left:20px;
+}
+
+body {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+
+main {
+  flex: 1 0 auto;
+}
+
+footer{
+  position:fixed;
+  bottom:0;
+  left:0;
+  width:100%;
+  height:50px;
+}
+
+nav{
+  padding-right:20px;
+  background:#4a148c;
+}
+
+button{
+  background-color: pink
+}
+button:hover{ 
+  background-color:#4a148c
+}
+
+button:active{ 
+  background-color:#4a148c
 }
