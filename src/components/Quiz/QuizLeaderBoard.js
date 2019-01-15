@@ -3,6 +3,7 @@ import {getLeaderboard} from '../utils';
 
 class QuizLeaderBoard extends Component {
 
+    //state
     state = {
         leaderboard: []
     }
