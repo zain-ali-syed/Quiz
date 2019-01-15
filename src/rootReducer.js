@@ -73,6 +73,10 @@ const initState =
       return initState;
     }
 
+    if(action.type === "RESET_STATE")
+    {
+      return {...state, options: { category: "", difficulty:"", type:"", amount:"" }, questions:[], shuffledAnswers:[], currQuestion:0, answeredQuestions:[]}
+    }
 
     return state;
   }

@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import {getGame} from '../utils';
 import { calculateGameResult, getFullDate} from './quiz_utils';
+import { Link } from 'react-router-dom';
 
 
 
@@ -56,6 +57,8 @@ class QuizGameDetails extends Component {
 
         return (
             <div>
+                    <Link className="waves-effect waves-light btn-large blue" to="/quiz">Play Again</Link>
+                    <br/><br/>
                     <table className="blue history">
                         <thead className="blue">
                             <tr >

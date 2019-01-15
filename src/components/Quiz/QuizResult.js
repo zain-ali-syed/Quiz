@@ -10,15 +10,17 @@ import firebase from 'firebase';
 
 class QuizResult extends Component {
 
+
     async componentDidMount()
     {
         //check if questions.length is 0 ..this means someone has just refreshed this page so send them to quiz start page instead
-        if(this.props.questions.length === 0)
+        if(this.props.questions.length === 0 || !this.props.questions)
         {
             this.props.history.push("/quiz");
             return;
         }
 
+       
         //save game to database
         const game = 
         {
@@ -47,7 +49,7 @@ class QuizResult extends Component {
                }
             });
 
-
+            this.props.resetState();
 
         }catch (err){
             console.log("error adding game ", err)
@@ -59,7 +61,7 @@ class QuizResult extends Component {
             <div className="center">
                 <h2>Result</h2>  
                 <p>
-                    Congratulations you scored { calculateGameResult(this.props.questions, this.props.answeredQuestions).correctAnswers } out of { calculateGameResult(this.props.questions, this.props.answeredQuestions).totalQuestions }
+                 Congratulations you scored { calculateGameResult(this.props.location.questions, this.props.location.answeredQuestions).correctAnswers } out of { this.props.location.questions.length }
                 </p>
                 <QuizHistory />
             </div>
@@ -82,7 +84,9 @@ const mapStateToProps = (state) => {
 
   const mapDispatchToProps = (dispatch) => {
     return {
-       updatePoints: (points) => { dispatch({ type:"SET_USER_POINTS", points }) }
+       updatePoints: (points) => { dispatch({ type:"SET_USER_POINTS", points }) },
+       resetState: () => {dispatch({type:"RESET_STATE"})}
+
     }
   }
   

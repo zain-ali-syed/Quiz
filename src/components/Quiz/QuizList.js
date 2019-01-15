@@ -45,7 +45,10 @@ class QuizList extends Component {
 
         if(this.props.answeredQuestions.length === this.props.questions.length)
         {
-            return <Redirect to='/quiz_result' />
+            console.log("redirect it!!!", this.props.answeredQuestions.length)
+            return <Redirect to={{ pathname:'/quiz_result', questions:this.props.questions, answeredQuestions:this.props.answeredQuestions }} />
+
+           
         }
            
         const allAnswers = this.props.shuffledAnswers[currQuestion]
@@ -54,13 +57,13 @@ class QuizList extends Component {
 
         return (
             <div style={{marginBottom:"200px"}}>
-                    <span>{this.props.currQuestion+1} of {this.props.questions.length}</span>
-                <QuizItem {...questions[currQuestion]} 
-                          allAnswers={allAnswers}
-                          updateAnsweredQuestions = {this.updateAnsweredQuestions}
-                          nextQuestion = {this.props.nextQuestion}
-                          />
-            </div>
+                <span>{this.props.currQuestion+1} of {this.props.questions.length}</span>
+            <QuizItem {...questions[currQuestion]} 
+                      allAnswers={allAnswers} 
+                      updateAnsweredQuestions = {this.updateAnsweredQuestions}
+                      nextQuestion = {this.props.nextQuestion}
+                      />
+        </div>
         );
     }
 }
@@ -84,7 +87,8 @@ const mapStateToProps = (state) => {
        updateAnsweredQuestions: (answer) => { dispatch({ type:"UPDATE_ANSWERED_QUESTIONS", answer }) },
        updatePoints: (points) => { dispatch({ type:"UPDATE_ANSWSET_USER_POINTS", points }) },
        nextQuestion: () => dispatch({ type:"NEXT_QUESTION" }),
-       prevQuestion: () => dispatch({ type:"PREV_QUESTION" }),
+       prevQuestion: () => dispatch({ type:"PREV_QUESTION" })
+
     }
   }
   

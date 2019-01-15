@@ -17,13 +17,13 @@ const QuizItem = ( { category, type, difficulty, question, allAnswers, updateAns
                             <button className="btn-large answer-button"
                                     style={{ margin:"10px" }}
                                     onClick = { () => { 
-                                                        clearTimeout(nTimeout);
-                                                        nTimeout = setTimeout(()=>{
-                                                            updateAnsweredQuestions(answer);
-                                                            nextQuestion() 
-                                                        }, 1000)
-                                                      }
-                                              }
+                                        clearTimeout(nTimeout);
+                                        nTimeout = setTimeout(()=>{
+                                            updateAnsweredQuestions(answer);
+                                            nextQuestion() 
+                                        }, 600)
+                                      }
+                                     }
                                     dangerouslySetInnerHTML={{ __html: answer }}
                                     >
                             </button>
@@ -43,6 +43,18 @@ const QuizItem = ( { category, type, difficulty, question, allAnswers, updateAns
     );
 };
 
+/*
 
+  onClick = { () => { 
+                                                        clearTimeout(nTimeout);
+                                                        nTimeout = setTimeout(()=>{
+                                                            updateAnsweredQuestions(answer);
+                                                            nextQuestion() 
+                                                        }, 1000)
+                                                      }
+                                              }
+
+
+*/
 export default QuizItem;
 
