@@ -85,7 +85,7 @@ const mapStateToProps = (state) => {
   const mapDispatchToProps = (dispatch) => {
     return {
        updatePoints: (points) => { dispatch({ type:"SET_USER_POINTS", points }) },
-       resetState: () => {dispatch({type:"RESET_STATE"})}
+       resetState: () => {dispatch({type:"RESET_GAME"})}
 
     }
   }

@@ -74,8 +74,8 @@ class QuizHistory extends Component {
                                 <tr key={i}>
                                     <td>{getFullDate(game.date.seconds)}</td>
                                     <td>{game.options.category}</td>
-                                    <td>{game.options.difficulty}</td>
-                                    <td>{game.options.type}</td>
+                                    <td>{game.options.difficulty !== "" ? game.options.difficulty:"random"}</td>
+                                    <td>{game.options.type !== "" ? game.options.type:"random"}</td>
                                     <td>{ percentage }%</td>
                                     <td>{ points }</td>
                                     <td><Link className="waves-effect waves-light btn-small purple darken-4"
