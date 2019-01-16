@@ -38,9 +38,10 @@ class Quiz extends Component {
 
                     <select className="browser-default" style={dropdownStyle} id="amount" onChange={this.props.handleChange}>
                         <option value="" disabled selected>Number of questions</option>
+                        <option value="5">5</option>
                         <option value="10">10</option>
+                        <option value="15">15</option>
                         <option value="20">20</option>
-                        <option value="30">30</option>
                     </select>
                     <br/>
                     <button className="waves-effect waves-light btn-large purple darken-4" type="submit">Let's start!!!</button>

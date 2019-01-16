@@ -17,7 +17,7 @@ const getGame = (collection, id) => {
 }
 
 const getGameHistory = (collection, uid) => {
-    return db.collection(collection).where('uid', '==',  uid).get() 
+    return db.collection(collection).where('uid', '==',  uid).orderBy('date', 'desc').limit(100).get() 
 }
 
 const getUser = (collection, uid) => {

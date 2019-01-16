@@ -42,9 +42,12 @@ class QuizGameDetails extends Component {
        return answers.map(answer => {
 
                         if(answer === question.correct_answer) rowStyle = "green accent-4"
-                        else rowStyle = "indigo darken-4"
+                        if(answer === question.correct_answer && chosenAnswer === answer) rowStyle = "green accent-4"
+                        if(answer !== question.correct_answer) rowStyle = "purple darken-3"
+                        if(answer !== question.correct_answer && chosenAnswer === answer) rowStyle = "red darken-3"
+
                             
-                        return <tr className={rowStyle}><th><span  dangerouslySetInnerHTML={{ __html: answer}}/>{chosenAnswer === answer && " --> your answer" }</th></tr>}
+                        return <tr className={rowStyle}><th><span  dangerouslySetInnerHTML={{ __html: answer}}/></th></tr>}
                     )
     }
     

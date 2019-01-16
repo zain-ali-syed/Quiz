@@ -3,9 +3,10 @@ import {getGameHistory} from '../utils';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { calculateGameResult, getFullDate} from './quiz_utils';
-
-
-
+const oCategories = {}
+require('../../category.json').trivia_categories.forEach(({id, name}) => {
+    oCategories[id] = name;
+});
 
 
 
@@ -18,7 +19,7 @@ class QuizHistory extends Component {
 
    componentDidMount()
    {
-    this.getGameHistory()
+     this.getGameHistory()
    }
 
    getGameHistory = async () => {
@@ -30,8 +31,6 @@ class QuizHistory extends Component {
         gamesSnapshot.forEach((game) => {
             games.push({...game.data(), _id:game.id})
         });
-
-        console.log(games)
 
          this.setState(() => ({ games }));
     }
@@ -70,10 +69,11 @@ class QuizHistory extends Component {
                             
                             const points = calculateGameResult(game.questions, game.answers).gamePoints;
                             const percentage = calculateGameResult(game.questions, game.answers).percentage;
+
                             return(
                                 <tr key={i}>
                                     <td>{getFullDate(game.date.seconds)}</td>
-                                    <td>{game.options.category}</td>
+                                    <td>{game.options.category !== "" ? oCategories[game.options.category]:"random"}</td>
                                     <td>{game.options.difficulty !== "" ? game.options.difficulty:"random"}</td>
                                     <td>{game.options.type !== "" ? game.options.type:"random"}</td>
                                     <td>{ percentage }%</td>

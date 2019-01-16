@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import QuizItem from './QuizItem';
 import { connect } from 'react-redux';
 import { Redirect } from 'react-router-dom';
+import  QuizLoadingBar  from './QuizLoadingBar';
 
 
 
@@ -41,7 +42,7 @@ class QuizList extends Component {
     render() {
         const { questions, currQuestion } = this.props;
        
-        if(questions.length  === 0 )  return <div> Loading </div>;
+        if(questions.length  === 0 )  return <QuizLoadingBar />;
 
         if(this.props.answeredQuestions.length === this.props.questions.length)
         {

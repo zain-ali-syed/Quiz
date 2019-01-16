@@ -28,6 +28,6 @@ export const calculateGameResult = (questions, answeredQuestions) => {
 
 export const getFullDate = (seconds) => {
 
-    return moment(seconds * 1000).format('MMMM Do YYYY, h:mm:ss a')
+    return moment(seconds * 1000).format('MMMM Do YYYY, h:mm a')
  }
  
