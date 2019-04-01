@@ -5,41 +5,45 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-color: #9c27b0;
-  color:whitesmoke;
+  color: whitesmoke;
   font-size: 35px;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
 
-.question-info{
-  font-size:25px;
+.error {
+  font-size: 16px;
 }
 
-.answer-button{
-  font-size:20px;
+.question-info {
+  font-size: 25px;
+}
+
+.answer-button {
+  font-size: 20px;
   background-color: #4a148c;
 }
 
-.history{
-  font-size:20px;
-  margin-bottom:100px;
-  padding-left:40px;
+.history {
+  font-size: 20px;
+  margin-bottom: 100px;
+  padding-left: 40px;
 }
 
-select{
+select {
   border: 1px solid #ccc;
   width: 120px;
   border-radius: 3px;
   overflow: hidden;
-  background:rgb(8, 133, 216) no-repeat 90% 50%;
-  height:50px;
-  color:white;
-  font-weight:bold;
-  font-size:40px;
-  height:200px;
+  background: rgb(8, 133, 216) no-repeat 90% 50%;
+  height: 50px;
+  color: white;
+  font-weight: bold;
+  font-size: 40px;
+  height: 200px;
 }
 
 .select-style select {
@@ -56,8 +60,8 @@ select{
   outline: none;
 }
 
-.margin{
-  margin-left:20px;
+.margin {
+  margin-left: 20px;
 }
 
 body {
@@ -70,26 +74,26 @@ main {
   flex: 1 0 auto;
 }
 
-footer{
-  position:fixed;
-  bottom:0;
-  left:0;
-  width:100%;
-  height:50px;
+footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 50px;
 }
 
-nav{
-  padding-right:20px;
-  background:#4a148c;
+nav {
+  padding-right: 20px;
+  background: #4a148c;
 }
 
-button{
-  background-color: pink
+button {
+  background-color: pink;
 }
-button:hover{ 
-  background-color:#4a148c
+button:hover {
+  background-color: #4a148c;
 }
 
-button:active{ 
-  background-color:#4a148c
+button:active {
+  background-color: #4a148c;
 }
