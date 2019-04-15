@@ -1,4 +1,8 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This is a React Quiz App. The focus is on using Firebase suite for authentication and as a database.
+
+Demo can be viewed at:
+http://quiz-zainsyed.surge.sh/login/
+
 
 ## Available Scripts
 
