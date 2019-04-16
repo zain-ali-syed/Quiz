@@ -18,7 +18,9 @@
     "react/prop-types": 0,
     "jsx-a11y/label-has-for": 0,
     "react/no-unused-state": 0,
-    "no-case-declarations": 0
+    "no-case-declarations": 0,
+    "no-underscore-dangle": 0,
+    "camelcase": 0
   },
   "globals": {
     "window": true,
