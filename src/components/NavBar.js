@@ -14,7 +14,6 @@ const logout = props => {
 };
 
 const NavBar = props => {
-  console.log('props are ', props);
   return (
     <nav>
       <div className="nav-wrapper purple darken-4">
