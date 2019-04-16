@@ -16,11 +16,11 @@ import QuizHistory from './components/Quiz/QuizHistory';
 import QuizLeaderBoard from './components/Quiz/QuizLeaderBoard';
 import QuizGameDetails from './components/Quiz/QuizGameDetails';
 
-const PrivateRoute = ({ component: Component, loggedIn, ...rest }) => (
+const PrivateRoute = ({ component: MyComponent, loggedIn, ...rest }) => (
   <Route
     {...rest}
     render={props => {
-      return loggedIn ? <Component {...props} /> : <Redirect to="/login/" />;
+      return loggedIn ? <MyComponent {...props} /> : <Redirect to="/login/" />;
     }}
   />
 );
